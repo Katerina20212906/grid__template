@@ -1,0 +1,91 @@
+.about {
+  background-color: $color-gray-light;
+  &__container {
+    @extend %container;
+    display: grid;
+
+    @include lg-min {
+      gap: 100px;
+      grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+      gap: 40px;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      gap: $gap;
+      grid-template-columns: 1fr;
+    }
+  }
+  &__content {
+    p {
+      color: $color-gray;
+      font-family: $font-main;
+      font-weight: 400;
+      @include lg-min {
+        font-size: 1.125rem;
+        letter-spacing: 0.05em;
+      }
+      @include lg {
+        font-size: 1rem;
+        letter-spacing: 0.055em;
+      }
+      &:first-of-type {
+        position: relative;
+
+        margin-top: -5px;
+        &::after {
+          position: absolute;
+          top: 0;
+
+          width: 2px;
+          height: ($gap * 10);
+
+          content: "";
+
+          background-color: rgba($color-gray, 0.1);
+          @include lg-min {
+            right: (-$gap * 2.5);
+          }
+          @include lg-md {
+            right: -$gap;
+          }
+          @include md {
+            right: (-$gap / 2);
+          }
+        }
+      }
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  &__image {
+    display: grid;
+    align-content: center;
+
+    justify-items: center;
+    img {
+      max-width: 100%;
+      max-height: 480px;
+    }
+  }
+
+  @include lg-min {
+    padding-top: ($gap * 5);
+    padding-bottom: ($gap * 5);
+  }
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @include md {
+    padding-top: ($gap * 3);
+    padding-bottom: ($gap * 3);
+  }
+}
