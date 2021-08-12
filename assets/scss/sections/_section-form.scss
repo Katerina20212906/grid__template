@@ -43,11 +43,12 @@
   height: ($gap * 3);
   padding-right: ($gap * 1.5);
   padding-left: ($gap * 1.5);
-
+  transition: background-color 0.5s, border-color 0.5s;
   border: 2px solid rgba($color-light, 0);
   border-bottom-color: rgba($color-light, 0.25);
   background-color: rgba($color-light, 0.05);
-
+  color: $color-light;
+  outline: none;
   font-size: 1.125rem;
 
   &:hover,
